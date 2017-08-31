@@ -2,7 +2,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, unique: true|
 |name|string|null: false|
 |email|string|null: false|
 
@@ -10,6 +9,8 @@
 ### Association
 - has_many :members
 - has_many :messages
+- has_many :groups, through: :members
+
 
 ## membersテーブル
 
@@ -26,12 +27,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, unique: true|
-|groupname|string|null: false|
+|name|string|null: false, unique: true, index: true|
 
 ### Association
 - has_many :members
 - has_many :messages
+- has_many :users, through: :members
 
 ## messagesテーブル
 
@@ -39,7 +40,7 @@
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-|body|text||
+|body|string||
 |image|string||
 
 
