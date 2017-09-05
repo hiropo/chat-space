@@ -1,0 +1,51 @@
+- group_name = 'Japan'
+.sidebar
+  .user-info
+    .user-info-name
+      %p sample    
+    .user-info-icon
+      %i.fa.fa-pencil-square-o
+      %i.fa.fa-cog
+
+    　　
+  .group
+    %p.group-name 
+      #{group_name} 
+    %p.group-messages 
+      No messages
+
+.chat
+  .chat__group
+    .chat__group__info
+      %p.chat__group__info__name
+        #{group_name}
+      %p.chat__group__info__member 
+        member
+    .chat__group__edit
+      %p Edit
+
+  .chat__messages
+ 
+    .chat__messages__output
+      %p.name 
+        username 
+      %p.date
+        yymmdd
+      %p.message 
+        message1
+
+    .chat__messages__output
+      %p.name 
+        username 
+      %p.date
+        yymmdd
+      %p.message 
+        message2
+
+  
+  .chat__form
+    .chat__form__input
+      %input.field{ type: "text", placeholder: "type a message" }
+      .contents__form__input__btn
+        %i.input-btn.fa.fa-picture-o
+      %input.button{ type: "submit", value: "Send" }

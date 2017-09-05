@@ -1,0 +1,41 @@
+.sidebar{
+  float: left;
+  width: 300px;
+  background-color: #2f3e51;
+  color: white;
+
+  .user-info{
+    width: 300px;
+    background-color: #253141;
+    height: 100px;
+    
+    &-name{
+      float: left;
+      padding: 35px 0 35px 20px;
+    }
+    
+    &-icon{
+      float: right;
+      padding: 35px 20px 15px 20px;
+    }
+  }
+  .group{
+      float: left;
+      width: 260px;
+      height: calc(100vh - 100px);
+      padding: 0px 20px;
+
+      &:hover{
+      background-color: #606666;
+      }
+ 
+      &-name{
+          font-size: 15px;
+          padding: 20px 0 5px 0;
+      }      
+
+      &-messages{
+          font-size: 11px;
+      }      
+  }
+}

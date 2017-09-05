@@ -1,0 +1,88 @@
+.chat{
+  float: right;
+  width: calc(100vw - 300px);
+  height: calc(100vh - 96px - 46px - 90px);
+  color: $chat-text-color;
+  &__group{
+    width: 900px;
+    padding: 0 40px 0 40px;
+    border-bottom: solid 1px #dedddd;
+    height: 99px;
+    
+      &__info{
+        float: left;
+        padding: 30px 0 15px 0;
+        .name{
+          font-size: 20px;
+        }
+        .member{
+          font-size: 12px;
+        }
+      }
+      &__edit{
+        float: right;
+        color: #38AEF0;;
+        margin-top: 28px;
+        border: 1px solid;
+        line-height: 40px;
+        padding: 0 20px;
+      }
+  }
+   &__messages{
+        float: left;
+        padding: 0 40px;
+        height: calc(100vh - 100px - 90px);
+        &__output{
+          margin-top: 40px;
+          .name{
+            float: left;
+            font-size: 15px;
+          }
+          .date{
+            float: left;
+            margin: 2px;
+            font-size: 12px;
+          }
+          .message{
+            padding-top: 10px;
+            font-size: 14px;
+          }
+        }
+    } 
+  &__form{
+    clear: both;
+    width: calc(100vw - 300px);
+    height: 90px;
+    background-color: #d2d2d2;
+    .field {
+      height: 50px;
+      margin: 20px 0 20px 40px;
+      background-color: #FFF;
+      width: 70%;
+      float: left;
+      color: #434A54;
+      font-size:16px;
+    }
+    .contents__form__input__btn {
+      width: 2%;
+      margin: 21px 10px 20px 0;
+      padding: 14px 10px 14px;
+      background-color: #FFF;
+      float: left;
+    }
+    .button {
+      background-color: #38AEF0;
+      color : #FFF;
+      margin: 20px 40px 20px 15px;
+      padding: 14px 0;
+      width: 8%;
+      float: right;
+    }
+    .message-bottom {
+      font-size: 14px;
+      color: #434A54;
+      clear: both;
+      padding: 0 0 40px 40px;
+    }
+  } 
+}
