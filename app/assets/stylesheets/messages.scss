@@ -4,7 +4,7 @@
   height: calc(100vh - 96px - 46px - 90px);
   color: $chat-text-color;
   &__group{
-    width: 900px;
+    width: calc(100vw - 300px - 80px);
     padding: 0 40px 0 40px;
     border-bottom: solid 1px #dedddd;
     height: 99px;
@@ -58,13 +58,13 @@
       height: 50px;
       margin: 20px 0 20px 40px;
       background-color: #FFF;
-      width: 70%;
+      width: calc(100vw - 700px);
       float: left;
       color: #434A54;
       font-size:16px;
     }
     .contents__form__input__btn {
-      width: 2%;
+      width: 20px;
       margin: 21px 10px 20px 0;
       padding: 14px 10px 14px;
       background-color: #FFF;
@@ -75,7 +75,7 @@
       color : #FFF;
       margin: 20px 40px 20px 15px;
       padding: 14px 0;
-      width: 8%;
+      width: 100px;
       float: right;
     }
     .message-bottom {
