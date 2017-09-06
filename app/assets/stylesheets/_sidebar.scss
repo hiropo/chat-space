@@ -4,17 +4,17 @@
   background-color: #2f3e51;
   color: white;
 
-  .user-info{
+  .user__info{
     width: 300px;
     background-color: #253141;
     height: 100px;
     
-    &-name{
+    &__name{
       float: left;
       padding: 35px 0 35px 20px;
     }
     
-    &-icon{
+    &__icon{
       float: right;
       padding: 35px 20px 15px 20px;
     }
