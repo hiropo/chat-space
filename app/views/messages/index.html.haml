@@ -1,20 +1,6 @@
 - group_name = 'Japan'
-.sidebar
-  .user__info
-    .user__info__name
-      %p sample    
-    .user__info__icon
-      = link_to root_path do
-        %i.fa.fa-pencil-square-o
-      = link_to root_path do
-        %i.fa.fa-cog
 
-    　　
-  .group
-    %p.group-name 
-      #{group_name} 
-    %p.group-messages 
-      No messages
+= render partial: "sidebar"
 
 .chat
   .chat__group
@@ -24,27 +10,14 @@
       %p.chat__group__info__member 
         member
     .chat__group__edit
-      %p Edit
+      = link_to root_path do
+        %p Edit
 
   .chat__messages
  
-    .chat__messages__output
-      %p.name 
-        username 
-      %p.date
-        yymmdd
-      %p.message 
-        message1
+    = render partial: "message1"
+    = render partial: "message2"
 
-    .chat__messages__output
-      %p.name 
-        username 
-      %p.date
-        yymmdd
-      %p.message 
-        message2
-
-  
   .chat__form
     .chat__form__input
       %input.field{ type: "text", placeholder: "type a message" }
