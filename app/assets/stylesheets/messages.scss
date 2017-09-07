@@ -32,6 +32,7 @@
         float: left;
         padding: 0 40px;
         height: calc(100vh - 100px - 90px);
+        overflow: scroll;
         &__output{
           margin-top: 40px;
           .name{
