@@ -21,11 +21,16 @@
       }
       &__edit{
         float: right;
-        color: #38AEF0;;
+        color: $edit-btn-color;
         margin-top: 28px;
         border: 1px solid;
         line-height: 40px;
         padding: 0 20px;
+        text-decoration: none;
+        &__btn{
+          text-decoration: none;
+          color: $edit-btn-color;
+        }
       }
   }
    &__messages{
