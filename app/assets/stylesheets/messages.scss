@@ -58,17 +58,22 @@
       height: 50px;
       margin: 20px 0 20px 40px;
       background-color: #FFF;
-      width: calc(100vw - 700px);
+      width: calc(100% - 240px);
       float: left;
       color: #434A54;
       font-size:16px;
+      border: none;
     }
-    .contents__form__input__btn {
-      width: 20px;
-      margin: 21px 10px 20px 0;
-      padding: 14px 10px 14px;
+    &__input__btn {
+      margin-top: 20px;
+      padding-right: 10px;
+      height: 50px;
       background-color: #FFF;
       float: left;
+      .fa.fa-picture-o{
+        padding-top: 15px;
+        font-size: 20px;
+      }
     }
     .button {
       background-color: #38AEF0;
@@ -77,12 +82,7 @@
       padding: 14px 0;
       width: 100px;
       float: right;
-    }
-    .message-bottom {
-      font-size: 14px;
-      color: #434A54;
-      clear: both;
-      padding: 0 0 40px 40px;
+      border: none;
     }
   } 
 }
