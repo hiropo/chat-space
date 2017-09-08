@@ -1,0 +1,39 @@
+.sidebar{
+  float: left;
+  width: 300px;
+  background-color: $sidebar-back-color;
+  color: $sidebar-text-color;
+
+  .user__info{
+    width: 300px;
+    background-color: $sidebar-info-color;
+    height: 100px;
+    &__name{
+      float: left;
+      padding: 35px 0 35px 20px;
+    }
+    
+    &__icon{
+      float: right;
+      padding: 35px 20px 15px 20px;
+    }
+    .fa{
+    color: $user-info-icon-color;
+    }
+  }
+  .group{
+      float: left;
+      width: 260px;
+      height: calc(100vh - 100px);
+      padding: 0px 20px;
+
+      &-name{
+          font-size: 15px;
+          padding: 20px 0 5px 0;
+      }      
+
+      &-messages{
+          font-size: 11px;
+      }      
+  }
+}

@@ -1,0 +1,94 @@
+.chat{
+  float: right;
+  width: calc(100vw - 300px);
+  height: calc(100vh - 96px - 46px - 90px);
+  color: $chat-text-color;
+  &__group{
+    width: calc(100vw - 300px - 80px);
+    padding: 0 40px 0 40px;
+    border-bottom: solid 1px #dedddd;
+    height: 99px;
+    
+      &__info{
+        float: left;
+        padding: 30px 0 15px 0;
+        .name{
+          font-size: 20px;
+        }
+        .member{
+          font-size: 12px;
+        }
+      }
+      &__edit{
+        float: right;
+        color: $edit-btn-color;
+        margin-top: 28px;
+        border: 1px solid;
+        line-height: 40px;
+        padding: 0 20px;
+        text-decoration: none;
+        &__btn{
+          text-decoration: none;
+          color: $edit-btn-color;
+        }
+      }
+  }
+   &__messages{
+        float: left;
+        padding: 0 40px;
+        height: calc(100vh - 100px - 90px);
+        overflow: scroll;
+        &__output{
+          margin-top: 40px;
+          .name{
+            float: left;
+            font-size: 15px;
+          }
+          .date{
+            float: left;
+            margin: 2px;
+            font-size: 12px;
+          }
+          .message{
+            padding-top: 10px;
+            font-size: 14px;
+          }
+        }
+    } 
+  &__form{
+    clear: both;
+    width: calc(100vw - 300px);
+    height: 90px;
+    background-color: $form-back-color;
+    .field {
+      height: 50px;
+      margin: 20px 0 20px 40px;
+      background-color: $form-input-color;
+      width: calc(100% - 240px);
+      float: left;
+      color: $placeholder-color;
+      font-size:16px;
+      border: none;
+    }
+    &__input__btn {
+      margin-top: 20px;
+      padding-right: 10px;
+      height: 50px;
+      background-color: $form-input-color;;
+      float: left;
+      .fa.fa-picture-o{
+        padding-top: 15px;
+        font-size: 20px;
+      }
+    }
+    .button {
+      background-color: $btn-send-color;
+      color : $form-input-color;;
+      margin: 20px 40px 20px 15px;
+      padding: 14px 0;
+      width: 100px;
+      float: right;
+      border: none;
+    }
+  } 
+}

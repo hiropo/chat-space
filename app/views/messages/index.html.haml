@@ -1,0 +1,26 @@
+- group_name = 'Japan'
+
+= render partial: "sidebar"
+
+.chat
+  .chat__group
+    .chat__group__info
+      %p.chat__group__info__name
+        #{group_name}
+      %p.chat__group__info__member 
+        member
+    .chat__group__edit
+      = link_to 'Edit', '/root', class: 'chat__group__edit__btn'
+      
+
+  .chat__messages
+ 
+    = render partial: "message1"
+    = render partial: "message2"
+
+  .chat__form
+    .chat__form__input
+      %input.field{ type: "text", placeholder: "type a message" }
+      .chat__form__input__btn
+        %i.input-btn.fa.fa-picture-o
+    %input.button{ type: "submit", value: "Send" }
