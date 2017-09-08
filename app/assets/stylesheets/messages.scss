@@ -59,14 +59,14 @@
     clear: both;
     width: calc(100vw - 300px);
     height: 90px;
-    background-color: #d2d2d2;
+    background-color: $form-back-color;
     .field {
       height: 50px;
       margin: 20px 0 20px 40px;
-      background-color: #FFF;
+      background-color: $form-input-color;
       width: calc(100% - 240px);
       float: left;
-      color: #434A54;
+      color: $placeholder-color;
       font-size:16px;
       border: none;
     }
@@ -74,7 +74,7 @@
       margin-top: 20px;
       padding-right: 10px;
       height: 50px;
-      background-color: #FFF;
+      background-color: $form-input-color;;
       float: left;
       .fa.fa-picture-o{
         padding-top: 15px;
@@ -82,8 +82,8 @@
       }
     }
     .button {
-      background-color: #38AEF0;
-      color : #FFF;
+      background-color: $btn-send-color;
+      color : $form-input-color;;
       margin: 20px 40px 20px 15px;
       padding: 14px 0;
       width: 100px;

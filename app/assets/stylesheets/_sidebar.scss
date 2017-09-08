@@ -1,12 +1,12 @@
 .sidebar{
   float: left;
   width: 300px;
-  background-color: #2f3e51;
-  color: white;
+  background-color: $sidebar-back-color;
+  color: $sidebar-text-color;
 
   .user__info{
     width: 300px;
-    background-color: #253141;
+    background-color: $sidebar-info-color;
     height: 100px;
     &__name{
       float: left;
