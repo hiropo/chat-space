@@ -1,14 +1,16 @@
 .sidebar
   .user__info
     .user__info__name
-      %p sample    
+      %p #{current_user.name}   
     .user__info__icon
       = link_to new_group_path do
         %i.fa.fa-pencil-square-o
       = link_to edit_user_registration_path do
-        %i.fa.fa-cog
-  .group
-    %p.group-name 
-      Japan
-    %p.group-messages 
-      No messages
+        %i.fa.fa-cog    
+    .group
+      -@groups.each do |group|
+        .group__info
+          %p.group__info-name  
+            #{group.name}
+          %p.group__info-messages 
+            No messages
