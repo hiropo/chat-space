@@ -18,13 +18,21 @@ class GroupsController < ApplicationController
   end
 
   def update
+    @group = find_group_by_id
+    @group.update(group_params)
+    redirect_to root_path
   end
 
   def edit
+    @group = find_group_by_id
   end
     
   private
   def group_params
       params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def find_group_by_id
+    Group.find(params[:id])
   end
 end
