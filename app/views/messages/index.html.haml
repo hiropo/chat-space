@@ -18,9 +18,18 @@
     = render partial: "message1"
     = render partial: "message2"
 
+  / .chat__form
+  /   .chat__form__input
+  /     %input.field{ type: "text", placeholder: "type a message" }
+  /     .chat__form__input__btn
+  /       %i.input-btn.fa.fa-picture-o
+  /   %input.button{ type: "submit", value: "Send" }
+
+
   .chat__form
-    .chat__form__input
-      %input.field{ type: "text", placeholder: "type a message" }
-      .chat__form__input__btn
-        %i.input-btn.fa.fa-picture-o
-    %input.button{ type: "submit", value: "Send" }
+    =form_for @message, url: {action: :create} , html: {class: 'chat__form'} do |f|
+      .chat__form__input
+        = f.text_field :body, placeholder: "type a message"
+        = f.file_field :image, class: 'chat__form__input__btn' do
+          %i.input-btn.fa.fa-picture-o
+      = f.button "Send" , class: 'button'
