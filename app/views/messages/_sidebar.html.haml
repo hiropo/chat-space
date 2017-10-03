@@ -9,7 +9,7 @@
         %i.fa.fa-cog    
     .group
       -@groups.each do |group|
-        .group__info
+        = link_to group_messages_path(group.id), class: "sidebar__group__info" do
           %p.group__info-name  
             #{group.name}
           -if group.messages.last.present?
