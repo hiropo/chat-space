@@ -1,5 +1,3 @@
-- group_name = 'Japan'
-
 = render partial: "sidebar"
 
 .chat
@@ -8,18 +6,19 @@
       %p.chat__group__info__name
         =@group.name
       %p.chat__group__info__member 
-        member
+        member:
+        - @group.users.each do |user|
+          #{user.name}
     .chat__group__edit
       = link_to 'Edit', '/root', class: 'chat__group__edit__btn'
 
   .chat__messages
  
-    = render partial: "message1"
-    = render partial: "message2"
+    = render partial: "message"
 
   .chat__form
     =form_for [@group, @message] do |f|
-      = f.text_field :body, placeholder: "type a message",class: 'chat__form__message'
+      = f.text_field :body, placeholder: "type a message", class: 'chat__form__message'
       = f.label :image, class: 'chat__form__icon' do
         %i.icon-btn.fa.fa-picture-o
         = f.file_field :image, class: 'chat__form__icon__filed'
