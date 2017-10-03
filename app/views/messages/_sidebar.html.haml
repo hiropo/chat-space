@@ -12,5 +12,8 @@
         .group__info
           %p.group__info-name  
             #{group.name}
-          %p.group__info-messages 
-            No messages
+          -if group.messages.last.present?
+            %p.group__info-messages 
+              = group.messages.last.body
+          -else
+            %p.group__info-messages まだメッセージはありません。

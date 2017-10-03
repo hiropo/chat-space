@@ -1,12 +1,12 @@
 - @messages.each do |msg|
   .chat__messages__output
     .chat__messages__output-upper
-      %p.name 
+      %p.chat__messages__output-upper-name 
         =msg.user.name
-      %p.date
-        =msg.created_at
+      %p.chat__messages__output-upper-date
+        =msg.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M')
     .chat__messages__output-lower
-      %p.message 
+      %p.chat__messages__output-lower-message
         =msg.body
         - if msg.image?
           = image_tag msg.image.thumb.url

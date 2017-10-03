@@ -3,9 +3,9 @@
 .chat
   .chat__group
     .chat__group__info
-      %p.chat__group__info__name
+      %p.chat__group__info-name
         =@group.name
-      %p.chat__group__info__member 
+      %p.chat__group__info-member 
         member:
         - @group.users.each do |user|
           =user.name
