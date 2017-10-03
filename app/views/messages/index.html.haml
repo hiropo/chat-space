@@ -6,7 +6,7 @@
   .chat__group
     .chat__group__info
       %p.chat__group__info__name
-        #{group_name}
+        =@group.name
       %p.chat__group__info__member 
         member
     .chat__group__edit
@@ -18,7 +18,7 @@
     = render partial: "message2"
 
   .chat__form
-    =form_for @message, url: {action: :create} do |f|
+    =form_for [@group, @message] do |f|
       = f.text_field :body, placeholder: "type a message",class: 'chat__form__message'
       = f.label :image, class: 'chat__form__icon' do
         %i.icon-btn.fa.fa-picture-o
