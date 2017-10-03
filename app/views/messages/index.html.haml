@@ -6,12 +6,11 @@
   .chat__group
     .chat__group__info
       %p.chat__group__info__name
-        #{group_name}
+        =@group.name
       %p.chat__group__info__member 
         member
     .chat__group__edit
       = link_to 'Edit', '/root', class: 'chat__group__edit__btn'
-      
 
   .chat__messages
  
@@ -19,8 +18,9 @@
     = render partial: "message2"
 
   .chat__form
-    .chat__form__input
-      %input.field{ type: "text", placeholder: "type a message" }
-      .chat__form__input__btn
-        %i.input-btn.fa.fa-picture-o
-    %input.button{ type: "submit", value: "Send" }
+    =form_for [@group, @message] do |f|
+      = f.text_field :body, placeholder: "type a message",class: 'chat__form__message'
+      = f.label :image, class: 'chat__form__icon' do
+        %i.icon-btn.fa.fa-picture-o
+        = f.file_field :image, class: 'chat__form__icon__filed'
+      = f.button "Send" , class: 'button'

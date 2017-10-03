@@ -62,3 +62,5 @@ gem 'pry-byebug'
 gem 'pry-doc'
 
 gem 'rails-i18n'
+gem 'carrierwave'
+gem "mini_magick"
