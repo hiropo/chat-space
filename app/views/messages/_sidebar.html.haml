@@ -9,11 +9,15 @@
         %i.fa.fa-cog    
     .group
       -@groups.each do |group|
-        = link_to group_messages_path(group.id), class: "sidebar__group__info" do
+        = link_to group_messages_path(group), class: "sidebar__group__info" do
           %p.group__info-name  
             #{group.name}
-          -if group.messages.last.present?
+          -if group.messages.last.body.present?
             %p.group__info-messages 
               = group.messages.last.body
-          -else
-            %p.group__info-messages まだメッセージはありません。
+          -elsif group.messages.last.image.present?
+            %p.group__info-messages 
+              最新の投稿は画像です。
+          -else 
+            %p.group__info-messages 
+              まだメッセージはありません。

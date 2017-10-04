@@ -1,5 +1,5 @@
-- @messages.each do |msg|
-  .chat__messages__output
+.chat__messages__output
+  - @messages.each do |msg|
     .chat__messages__output-upper
       %p.chat__messages__output-upper-name 
         =msg.user.name
