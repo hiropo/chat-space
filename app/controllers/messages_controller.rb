@@ -6,13 +6,10 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages.includes(:user)
-
   end
 
   def create
     @message = Message.new(message_params)
-    @messages = @group.messages.includes(:user)
     if @message.save
       redirect_to group_messages_path, notice: "メッセージを作成しました。"
     else 
