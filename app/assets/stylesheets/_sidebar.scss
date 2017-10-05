@@ -26,7 +26,9 @@
       width: 260px;
       height: calc(100vh - 100px);
       padding: 0px 20px;
-
+      p{
+        color: #FFF;
+      }
       &__info-name{
           font-size: 15px;
           padding: 20px 0 5px 0;
