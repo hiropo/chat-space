@@ -51,9 +51,7 @@ describe MessagesController, type: :controller do
        params: valid_message
       }
         it "message is inserted in the database" do
-          expect do
-          subject
-          end.to change(Message, :count).by(1)
+          expect{ subject }.to change(Message, :count).by(1)
         end
         it "message is inserted and redirect to group_messages_path" do
           subject
@@ -70,9 +68,7 @@ describe MessagesController, type: :controller do
           params: error_message
         }
         it "meesage is NOT inserted in the database" do
-          expect do
-          subject
-          end.not_to change(Message, :count)
+          expect{ subject }.not_to change(Message, :count)
         end
        
         it "message is NOT inserted and renders the :index template" do
