@@ -3,8 +3,10 @@ require 'rails_helper'
 describe MessagesController, type: :controller do
   let(:user) { create(:user) }
   let(:group) { create(:group) }
+  let(:groups) { user.groups }
   let(:messages) { create_list(:message, 5, user: user, group: group) }
-  let(:error_message) { { text: "", image: ""} }
+  let(:valid_message) {{ message: attributes_for(:message), group_id: group }}
+  let(:error_message) {{ message: {text: "", image: ""}, group_id: group}}
 
     describe 'GET #index' do
       context 'when user is logged in' do
@@ -22,7 +24,6 @@ describe MessagesController, type: :controller do
         end
 
         it "assigns the requested contact to @groups" do
-          groups = user.groups
           expect(assigns(:groups)).to match groups
         end    
 
@@ -45,11 +46,17 @@ describe MessagesController, type: :controller do
         before do 
           login_user user
         end
+      subject{
+       post :create,
+       params: valid_message
+      }
         it "message is inserted in the database" do
-           expect{ post :create, params: { message: attributes_for(:message), user_id: user, group_id: group} }.to change(Message, :count).by(1)
+          expect do
+          subject
+          end.to change(Message, :count).by(1)
         end
         it "message is inserted and redirect to group_messages_path" do
-          post :create, params: { message: attributes_for(:message), user_id: user, group_id: group }
+          subject
           expect(response).to redirect_to group_messages_path
         end        
 
@@ -58,12 +65,18 @@ describe MessagesController, type: :controller do
         before do
           login_user user
         end
+        subject{
+          post :create,
+          params: error_message
+        }
         it "meesage is NOT inserted in the database" do
-           expect{ post :create, params: { message: error_message, group_id: group } }.not_to change(Message, :count)
+          expect do
+          subject
+          end.not_to change(Message, :count)
         end
        
         it "message is NOT inserted and renders the :index template" do
-           post :create, params: { message: error_message, group_id: group }
+           subject
            expect(response).to render_template(:index)
         end
       end 
