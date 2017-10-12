@@ -1,5 +1,9 @@
 $(function(){
   function buildHTML(message){
+    　var insertImage = '';
+   if (message.image) {
+     insertImage = `<img src="${message.image.url}">`
+   }
     var html = `<div class = "chat__messages__output-upper">
                   <div class = "chat__messages__output-upper-name">
                     <p>${message.name}</p>
@@ -11,6 +15,7 @@ $(function(){
                 <div class = "chat__messages__output-lower">
                   <div class = "chat__messages__output-lower-message">
                     <p>${message.body}</p>
+                    <p>${insertImage}</p>
                   </div>
                 </div>`
     return html;
