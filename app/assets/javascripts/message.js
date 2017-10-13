@@ -1,9 +1,6 @@
 $(function(){
   function buildHTML(message){
-    　var insertImage = '';
-   if (message.image) {
-     insertImage = `<img src="${message.image.url}">`
-   }
+    var insertImage = message.image ? `<img src="${message.image.url}">` : '' ;
     var html = `<div class = "chat__messages__output-upper">
                   <div class = "chat__messages__output-upper-name">
                     <p>${message.name}</p>
@@ -22,6 +19,7 @@ $(function(){
   }  
   $('#new_message').on('submit', function(e){
     e.preventDefault();
+    console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
@@ -36,6 +34,7 @@ $(function(){
       var html = buildHTML(data);
       $('.chat__messages').append(html)
       $('.chat__form__message').val('')
+      $('.chat__form__icon__filed').val('')
       $('.chat__messages').animate( {scrollTop: $('.chat__messages__output')[0].scrollHeight} );
     })
     .fail(function(){
