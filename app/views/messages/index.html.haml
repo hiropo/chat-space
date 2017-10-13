@@ -17,7 +17,7 @@
     = render partial: "message"
 
   .chat__form
-    =form_for [@group, @message] do |f|
+    =form_for [@group, @message], html: {id: "new_message"} do |f|
       = f.text_field :body, placeholder: "type a message", class: 'chat__form__message'
       = f.label :image, class: 'chat__form__icon' do
         %i.icon-btn.fa.fa-picture-o
