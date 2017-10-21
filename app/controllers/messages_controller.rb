@@ -6,6 +6,10 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
@@ -15,7 +19,7 @@ class MessagesController < ApplicationController
         format.html {redirect_to group_messages_path, notice: 'メッセージを作成しました'}
         format.json
       end
-    else 
+    else
       flash[:alert] = 'メッセージを入力してください'
       render :index
     end
