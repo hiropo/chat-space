@@ -1,6 +1,6 @@
 .chat__messages__output
   - @messages.each do |msg|
-    .chat__messages__output-upper
+    .chat__messages__output-upper{'data-message-id': msg.id}
       %p.chat__messages__output-upper-name 
         =msg.user.name
       %p.chat__messages__output-upper-date
