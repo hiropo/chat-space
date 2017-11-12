@@ -81,7 +81,8 @@
       margin-top: 20px;
       padding-right: 10px;
       height: 50px;
-      background-color: $form-input-color;;
+      background-color: $form-input-color;
+      float: left;
     &__filed{
       display: none;
     }

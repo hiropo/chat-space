@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var insertImage = message.image ? `<img src="${message.image.url}">` : '' ;
-    var html = `<div class = "chat__messages__output-upper">
+    var html = `<div class = "chat__messages__output-upper"data-message-id="${message.id}">
                   <div class = "chat__messages__output-upper-name">
                     <p>${message.name}</p>
                   </div>
@@ -39,5 +39,34 @@ $(function(){
     .fail(function(){
       alert('error');
     })
-})
+  })
+
+  if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    function update(){
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        dataType: 'json'
+      })
+      .done(function(messages) {
+        var message_id = $(".chat__messages__output-upper:last").attr('data-message-id');
+        var insertHTML = '';
+        messages.forEach(function(message) {
+          if (message.id >　message_id ){
+            insertHTML += buildHTML(message);
+            $('.chat__messages').animate( {scrollTop: $('.chat__messages__output')[0].scrollHeight} );
+          }
+        });
+        $('.chat__messages').append(insertHTML);
+      })
+      .fail(function() {
+        alert("失敗")
+      });
+    };
+
+    $(function(){
+      setInterval(update, 5000);
+    });
+  }
+
 })
